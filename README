@@ -1,0 +1,2 @@
+Python code read register map of Schneider PM2120, power monitor unit 
+with python package pymodbus.
