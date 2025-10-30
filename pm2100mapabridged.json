@@ -1,0 +1,84 @@
+[
+    {
+        "category": "Current- 1st Metering ",
+        "address": 3000,
+        "length": 20,
+        "registers": [
+            {"name": "Current A", "addr": 3000, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current B", "addr": 3002, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current C", "addr": 3004, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current N", "addr": 3006, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current G", "addr": 3008, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current Avg", "addr": 3010, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current Unbalance A", "addr": 3012, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current Unbalance B", "addr": 3014, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current Unbalance C", "addr": 3016, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current Unbalance Worst", "addr": 3018, "len": 2, "type": "FLOAT32", "access": "R"}
+        ]
+    },
+    {
+        "category": "Voltage - 1st Metering ",
+        "address": 3020,
+        "length": 32,
+        "registers": [
+            {"name": "Voltage A-B", "addr": 3020, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage B-C", "addr": 3022, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage C-A", "addr": 3024, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage L-L Avg", "addr": 3026, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage A-N", "addr": 3028, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage B-N", "addr": 3030, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage C-N", "addr": 3032, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage L-N Avg", "addr": 3034, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance A-B", "addr": 3038, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance B-C", "addr": 3040, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance C-A", "addr": 3042, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance L-L Worst", "addr": 3044, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance A-N", "addr": 3046, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance B-N", "addr": 3048, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance C-N", "addr": 3050, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance L-N Worst", "addr": 3052, "len": 2, "type": "FLOAT32", "access": "R"}
+        ]
+    },
+    {
+        "category": "Power - 1st Metering ",
+        "address": 3054,
+        "length": 24,
+        "registers": [
+            {"name": "Active Power A", "addr": 3054, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Active Power B", "addr": 3056, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Active Power C", "addr": 3058, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Active Power Total", "addr": 3060, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Reactive Power A", "addr": 3062, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Reactive Power B", "addr": 3064, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Reactive Power C", "addr": 3066, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Reactive Power Total", "addr": 3068, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Apparent Power A", "addr": 3070, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Apparent Power B", "addr": 3072, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Apparent Power C", "addr": 3074, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Apparent Power Total", "addr": 3076, "len": 2, "type": "FLOAT32", "access": "R"}
+        ]
+    },
+    {
+        "category": "Power Factor - 1st Metering ",
+        "address": 3078,
+        "length": 12,
+        "registers": [
+            {"name": "Power Factor A", "addr": 3078, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Power Factor B", "addr": 3080, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Power Factor C", "addr": 3082, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Power Factor Total", "addr": 3084, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Displacement Power Factor A", "addr": 3086, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "TDisplacement Power Factor B", "addr": 3088, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Displacement Power Factor C", "addr": 3090, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Displacement Power Factor Total", "addr": 3092, "len": 2, "type": "FLOAT32", "access": "R"}
+        ]
+    },
+    {
+        "category": "Frequency - 1st Metering ",
+        "address": 3110,
+        "length": 2,
+        "registers": [    
+            {"name": "Frequency", "addr": 3110, "len": 2, "type": "FLOAT32", "access": "R"}
+        ]
+    }
+]

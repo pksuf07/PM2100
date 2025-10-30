@@ -1,0 +1,36 @@
+[
+    {
+        "category": "Setup - Power System", 
+        "address": 2014, 
+        "length": 11,  
+        "registers": [
+            {"name": "Number of Phases", "addr": 2014, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Number of Wires", "addr": 2015, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Power System Configuration", "addr": 2016, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Nominal Frequency", "addr": 2017, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Nominal Voltage", "addr": 2018, "len": 2, "type": "FLOAT32", "access": "RW"},
+            {"name": "Nominal Current", "addr": 2020, "len": 2, "type": "FLOAT32", "access": "RW"},
+            {"name": "Nominal Power Factor", "addr": 2022, "len": 2, "type": "4Q_FP_PF", "access": "RW"},
+            {"name": "Normal Phase Rotation", "addr": 2024, "len": 1, "type": "INT16U", "access": "RW"}
+        ]
+    },
+    { 
+        "category": "Setup - Transformers", 
+        "address": 2025, 
+        "length": 12, 
+        "registers": [
+            {"name": "Number VTs", "addr": 2025, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "VT Primary", "addr": 2026, "len": 2, "type": "FLOAT32", "access": "RW"},
+            {"name": "VT Secondary", "addr": 2028, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Number CTs", "addr": 2029, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "CT Primary", "addr": 2030, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "CT Secondary", "addr": 2031, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "CT Primary N", "addr": 2032, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "CT Secondary N", "addr": 2033, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "CT Location for 1 or 2 CT Metering", "addr": 2034, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "VT Location for 1 or 2 VT Metering", "addr": 2035, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "VT Connection Type", "addr": 2036, "len": 1, "type": "INT16U", "access": "RW"}
+        ]
+    }
+]
+   

@@ -1,0 +1,300 @@
+[
+    {
+        "category": "Setup - Power System", 
+        "address": 2014, 
+        "length": 11,  
+        "registers": [
+            {"name": "Number of Phases", "addr": 2014, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Number of Wires", "addr": 2015, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Power System Configuration", "addr": 2016, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Nominal Frequency", "addr": 2017, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Nominal Voltage", "addr": 2018, "len": 2, "type": "FLOAT32", "access": "RW"},
+            {"name": "Nominal Current", "addr": 2020, "len": 2, "type": "FLOAT32", "access": "RW"},
+            {"name": "Nominal Power Factor", "addr": 2022, "len": 2, "type": "4Q_FP_PF", "access": "RW"},
+            {"name": "Normal Phase Rotation", "addr": 2024, "len": 1, "type": "INT16U", "access": "RW"}
+        ]
+    },
+    { 
+        "category": "Setup - Transformers", 
+        "address": 2025, 
+        "length": 12, 
+        "registers": [
+            {"name": "Number VTs", "addr": 2025, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "VT Primary", "addr": 2026, "len": 2, "type": "FLOAT32", "access": "RW"},
+            {"name": "VT Secondary", "addr": 2028, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Number CTs", "addr": 2029, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "CT Primary", "addr": 2030, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "CT Secondary", "addr": 2031, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "CT Primary N", "addr": 2032, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "CT Secondary N", "addr": 2033, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "CT Location for 1 or 2 CT Metering", "addr": 2034, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "VT Location for 1 or 2 VT Metering", "addr": 2035, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "VT Connection Type", "addr": 2036, "len": 1, "type": "INT16U", "access": "RW"}
+        ]
+    },
+    {
+        "category": "Energy Accumulation (32-bit Float)",
+        "address": 2700,
+        "length": 24,
+        "registers": [
+            {"name": "Active Energy Delivered", "addr": 2700, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Active Energy Received", "addr": 2702, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Active Energy Delivered+Received", "addr": 2704, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Active Energy Delivered-Received", "addr": 2706, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Reactive Energy Delivered", "addr": 2708, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Reactive Energy Received", "addr": 2710, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Reactive Energy Delivered+Received", "addr": 2712, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Reactive Energy Delivered-Received", "addr": 2714, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Apparent Energy Delivered", "addr": 2716, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Apparent Energy Received", "addr": 2718, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Apparent Energy Delivered+Received", "addr": 2720, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Apparent Energy Delivered-Received", "addr": 2722, "len": 2, "type": "FLOAT32", "access": "R"}
+        ]
+    }, 
+    {
+        "category": "Energy by Quadrant - 32 bit loating point values",
+        "address": 2732,
+        "length": 10,
+        "registers": [
+            {"name": "Reactive Energy in Q1", "addr": 2732, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Reactive Energy in Q2", "addr": 2734, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Reactive Energy in Q3", "addr": 2738, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Reactive Energy in Q4", "addr": 2740, "len": 2, "type": "FLOAT32", "access": "R"}
+        ]
+    },
+    {
+        "category": "Current- 1st Metering ",
+        "address": 3000,
+        "length": 20,
+        "registers": [
+            {"name": "Current A", "addr": 3000, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current B", "addr": 3002, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current C", "addr": 3004, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current N", "addr": 3006, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current G", "addr": 3008, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current Avg", "addr": 3010, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current Unbalance A", "addr": 3012, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current Unbalance B", "addr": 3014, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current Unbalance C", "addr": 3016, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Current Unbalance Worst", "addr": 3018, "len": 2, "type": "FLOAT32", "access": "R"}
+        ]
+    },
+    {
+        "category": "Voltage - 1st Metering ",
+        "address": 3020,
+        "length": 32,
+        "registers": [
+            {"name": "Voltage A-B", "addr": 3020, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage B-C", "addr": 3022, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage C-A", "addr": 3024, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage L-L Avg", "addr": 3026, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage A-N", "addr": 3028, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage B-N", "addr": 3030, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage C-N", "addr": 3032, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage L-N Avg", "addr": 3034, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance A-B", "addr": 3038, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance B-C", "addr": 3040, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance C-A", "addr": 3042, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance L-L Worst", "addr": 3044, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance A-N", "addr": 3046, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance B-N", "addr": 3048, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance C-N", "addr": 3050, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Voltage Unbalance L-N Worst", "addr": 3052, "len": 2, "type": "FLOAT32", "access": "R"}
+        ]
+    },
+    {
+        "category": "Power - 1st Metering ",
+        "address": 3054,
+        "length": 24,
+        "registers": [
+            {"name": "Active Power A", "addr": 3054, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Active Power B", "addr": 3056, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Active Power C", "addr": 3058, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Active Power Total", "addr": 3060, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Reactive Power A", "addr": 3062, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Reactive Power B", "addr": 3064, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Reactive Power C", "addr": 3066, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Reactive Power Total", "addr": 3068, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Apparent Power A", "addr": 3070, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Apparent Power B", "addr": 3072, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Apparent Power C", "addr": 3074, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Apparent Power Total", "addr": 3076, "len": 2, "type": "FLOAT32", "access": "R"}
+        ]
+    },
+    {
+        "category": "Power Factor - 1st Metering ",
+        "address": 3078,
+        "length": 12,
+        "registers": [
+            {"name": "Power Factor A", "addr": 3078, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Power Factor B", "addr": 3080, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Power Factor C", "addr": 3082, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Power Factor Total", "addr": 3084, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Displacement Power Factor A", "addr": 3086, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "TDisplacement Power Factor B", "addr": 3088, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Displacement Power Factor C", "addr": 3090, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Displacement Power Factor Total", "addr": 3092, "len": 2, "type": "FLOAT32", "access": "R"}
+        ]
+    },
+    {
+        "category": "Frequency - 1st Metering ",
+        "address": 3110,
+        "length": 2,
+        "registers": [    
+            {"name": "Frequency", "addr": 3110, "len": 2, "type": "FLOAT32", "access": "R"}
+        ]
+    },
+    {
+        "category": "Energy Accumulated 64",
+        "address": 3200,
+        "length": 52,
+        "registers": [
+            {"name": "Accumulated Energy Reset Date/Time", "addr": 3200, "len": 4, "type": "DATETIME", "access": "R"},
+            {"name": "Active Energy Delivered", "addr": 3204, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Active Energy Received", "addr": 3208, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Active Energy Delivered+Received", "addr": 3212, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Active Energy Delivered-Received", "addr": 3216, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Reactive Energy Delivered", "addr": 3220, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Reactive Energy Received", "addr": 3224, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Reactive Energy Delivered+Received", "addr": 3228, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Reactive Energy Delivered-Received", "addr": 3232, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Apparent Energy Delivered", "addr": 3236, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Apparent Energy Received", "addr": 3240, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Apparent Energy Delivered+Received", "addr": 3244, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Apparent Energy Delivered-Received", "addr": 3248, "len": 4, "type": "INT64", "access": "R"}
+        ]
+    },
+    {
+        "category": "Energy by Quadrrant 64",
+        "address": 3272,
+        "length": 12,
+        "registers": [
+            {"name": "Reactive Energy in Quadrant I", "addr": 3272, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Reactive Energy in Quadrant II", "addr": 3276, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Reactive Energy in Quadrant III", "addr": 3280, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Reactive Energy in Quadrant IV", "addr": 3284, "len": 4, "type": "INT64", "access": "R"}
+        ]
+    },
+    {
+        "category": "Accumulated Energy Permanent 64",
+        "address": 3304,
+        "length": 48,
+        "registers": [           
+            {"name": "Active Energy Delivered", "addr": 3304, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Active Energy Received", "addr": 3308, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Active Energy Delivered+Received", "addr": 3312, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Active Energy Delivered-Received", "addr": 3316, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Reactive Energy Delivered", "addr": 3320, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Reactive Energy Received", "addr": 3324, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Reactive Energy Delivered+Received", "addr": 3328, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Reactive Energy Delivered-Received", "addr": 3332, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Apparent Energy Delivered", "addr": 3336, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Apparent Energy Received", "addr": 3340, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Apparent Energy Delivered+Received", "addr": 3344, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Apparent Energy Delivered-Received", "addr": 3348, "len": 4, "type": "INT64", "access": "R"}
+        ]
+    },
+    {
+        "category": "Energy by Phase (64-bit Int)",
+        "address": 3514,
+        "length": 40,
+        "registers": [
+            {"name": "Energy by Phase Reset Data/Time", "addr": 3514, "len": 4, "type": "DATETIME", "access": "R"},
+            {"name": "Active Energy Delivered Phase A", "addr": 3518, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Active Energy Delivered Phase B", "addr": 3522, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Active Energy Delivered Phase C", "addr": 3526, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Reactive Energy Delivered Phase A", "addr": 3530, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Reactive Energy Delivered Phase B", "addr": 3534, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Reactive Energy Delivered Phase C", "addr": 3538, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Apparent Energy Delivered Phase A", "addr": 3542, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Apparent Energy Delivered Phase B", "addr": 3546, "len": 4, "type": "INT64", "access": "R"},
+            {"name": "Apparent Energy Delivered Phase C", "addr": 3550, "len": 4, "type": "INT64", "access": "R"}
+        ]
+    },
+    {
+        "category": "Demand System 1 (Power)",
+        "address": 3701,
+        "length": 9,
+        "registers": [
+            {"name": "Power Demand Method", "addr": 3701, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Power Demand Interval Duration", "addr": 3702, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Power Demand Subinterval Duration", "addr": 3703, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Power Demand Elapsed Time in Interval", "addr": 3704, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "Power Demand Elapsed Time in Subinterval", "addr": 3705, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "Power Demand Peak Reset Date/Time", "addr": 3706, "len": 4, "type": "DATETIME", "access": "R"}
+        ]
+    },
+        {
+        "category": "Demand System 2 (Current)",
+        "address": 3711,
+        "length": 9,
+        "registers": [
+            {"name": "Current Demand Method", "addr": 3711, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Current Demand Interval Duration", "addr": 3712, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Current Demand Subinterval Duration", "addr": 3713, "len": 1, "type": "INT16U", "access": "RW"},
+            {"name": "Current Demand Elapsed Time in Interval", "addr": 3714, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "Current Demand Elapsed Time in Subinterval", "addr": 3715, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "Current Demand Peak Reset Date/Time", "addr": 3716, "len": 4, "type": "DATETIME", "access": "R"}
+        ]
+    },
+    {
+        "category": "Demand Channel 1 (Active Power)",
+        "address": 3761,
+        "length": 15,
+        "registers": [
+            {"name": "Demand System Assignment", "addr": 3761, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "Register Number of Metered Quantity", "addr": 3762, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "Unit Code", "addr": 3763, "len": 1, "type": "INT16U", "access": "R"},          
+            {"name": "Last Demand", "addr": 3764, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Present Demand", "addr": 3766, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Predicted Demand", "addr": 3768, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Peak Demand", "addr": 3770, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Peak Demand Date/Time", "addr": 3762, "len": 4, "type": "DATETIME", "access": "R"}
+        ]
+    },
+    {
+        "category": "Demand Channel 2 (Reactive Power)",
+        "address": 3777,
+        "length": 15,
+        "registers": [
+            {"name": "Demand System Assignment", "addr": 3777, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "Register Number of Metered Quantity", "addr": 3778, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "Unit Code", "addr": 3779, "len": 1, "type": "INT16U", "access": "R"},          
+            {"name": "Last Demand", "addr": 3780, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Present Demand", "addr": 3782, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Predicted Demand", "addr": 3784, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Peak Demand", "addr": 3786, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Peak Demand Date/Time", "addr": 3788, "len": 4, "type": "DATETIME", "access": "R"}
+        ]
+    },
+    {
+        "category": "Demand Channel 3 (Apparent Power)",
+        "address": 3793,
+        "length": 15,
+        "registers": [
+            {"name": "Demand System Assignment", "addr": 3793, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "Register Number of Metered Quantity", "addr": 3794, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "Unit Code", "addr": 3795, "len": 1, "type": "INT16U", "access": "R"},          
+            {"name": "Last Demand", "addr": 3796, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Present Demand", "addr": 3798, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Predicted Demand", "addr": 3800, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Peak Demand", "addr": 3802, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Peak Demand Date/Time", "addr": 3804, "len": 4, "type": "DATETIME", "access": "R"}
+        ]
+    },
+    {
+        "category": "Demand Channel 8 (Current Avg)",
+        "address": 3873,
+        "length": 15,
+        "registers": [
+            {"name": "Demand System Assignment", "addr": 3873, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "Register Number of Metered Quantity", "addr": 3874, "len": 1, "type": "INT16U", "access": "R"},
+            {"name": "Unit Code", "addr": 3875, "len": 1, "type": "INT16U", "access": "R"},          
+            {"name": "Last Demand", "addr": 3876, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Present Demand", "addr": 3878, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Predicted Demand", "addr": 3880, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Peak Demand", "addr": 3882, "len": 2, "type": "FLOAT32", "access": "R"},
+            {"name": "Peak Demand Date/Time", "addr": 3884, "len": 4, "type": "DATETIME", "access": "R"}
+        ]
+    }
+]
