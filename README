@@ -5,5 +5,5 @@ with python package pymodbus.
 - register map for PM2100 1st reading : pm2100abridged.json
 - register map for PM2100, all registers: pm2100original.json
 
-- pm2100reeady.py 
+- pm2100datatype.py 
     convert all data types of PM2100 Holding register to user readable, Python data structure.
