@@ -1,5 +1,6 @@
 from pymodbus.client import ModbusTcpClient
 from pm2100json import *
+from pm2100datatype import *
 import time
 import csv
 
@@ -43,7 +44,7 @@ def read_float32_files(client, address, counts):
 #-------------------------------------------------------------------------------
 def main():
     #-- read json register map -------------------------------------------------
-    registermap=read_json_register_map()
+    registermap=pm2120_registermap("pm2100mapabridged.json")
 
     #-- log data in csv format -------------------------------------------------
     with open('datalog.csv', 'at', newline='') as f:
@@ -71,7 +72,7 @@ def main():
             print(f"  Start Address: {address}")
             print(f"  Contains {num_registers} register definitions.")
         
-            values = read_float32_files(client, address-1, num_registers*2)
+            values = read_float32_register_files(client, address-1, num_registers*2)
             if type(values) == list :
                 regarray = regarray + values
             else:

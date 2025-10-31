@@ -56,7 +56,7 @@ def read_datetime(client, addr):
     return None
 
 #-----------------------------------------------------------------
-def read_register_int16(client, addr):
+def read_int16_register(client, addr):
     ra = client.read_holding_registers(address=addr, count=1)
     
     if not ra.isError():
@@ -68,8 +68,19 @@ def read_register_int16(client, addr):
         return int16val
     return None
 
+def read_int16_register_files(client, addr, counts):
+    ra = client.read_holding_registers(address=addr, count=counts)
+    
+    if not ra.isError():
+        # Decode the registers as a 16-bit integer
+        int16vals = client.convert_from_registers(
+            registers=ra.registers,
+            data_type =client.DATATYPE.INT16
+        )
+        return int16vals
+    return None
 #-----------------------------------------------------------------
-def read_register_uint16(client, addr):
+def read_uint16_register(client, addr):
     ra = client.read_holding_registers(address=addr, count=1)
     
     if not ra.isError():
@@ -81,8 +92,19 @@ def read_register_uint16(client, addr):
         return uint16val
     return None
 
+def read_uint16_register_files(client, addr, counts):
+    ra = client.read_holding_registers(address=addr, count=counts)
+    
+    if not ra.isError():
+        # Decode the registers as a 16-bit unsigned integer
+        uint16vals = client.convert_from_registers(
+            registers=ra.registers,
+            data_type =client.DATATYPE.UINT16
+        )
+        return uint16vals
+    return None
 #-----------------------------------------------------------------
-def read_register_int32(client, addr):
+def read_int32_register(client, addr):
     ra = client.read_holding_registers(address=addr, count=2)
     
     if not ra.isError():
@@ -94,8 +116,20 @@ def read_register_int32(client, addr):
         return int32val
     return None
 
+def read_int32_register_files(client, addr, counts):
+    ra = client.read_holding_registers(address=addr, count=2*counts)
+    
+    if not ra.isError():
+        # Decode the registers as a 32-bit integer
+        int32vals = client.convert_from_registers(
+            registers=ra.registers,
+            data_type =client.DATATYPE.INT32
+        )
+        return int32vals
+    return None
+
 #-----------------------------------------------------------------
-def read_register_uint32(client, addr):
+def read_uint32_register(client, addr):
     ra = client.read_holding_registers(address=addr, count=2)
     
     if not ra.isError():
@@ -107,8 +141,20 @@ def read_register_uint32(client, addr):
         return uint32val
     return None
 
+def read_uint32_register_files(client, addr, counts):
+    ra = client.read_holding_registers(address=addr, count=2*counts)
+    
+    if not ra.isError():
+        # Decode the registers as a 32-bit unsigned integer
+        uint32vals = client.convert_from_registers(
+            registers=ra.registers,
+            data_type =client.DATATYPE.UINT32
+        )
+        return uint32vals
+    return None
+
 #-----------------------------------------------------------------
-def read_register_int64(client, addr):
+def read_int64_register(client, addr):
     ra = client.read_holding_registers(address=addr, count=4)
     
     if not ra.isError():
@@ -120,7 +166,7 @@ def read_register_int64(client, addr):
         return int64val
     return None
 
-def read_registers_int64(client, addr, counts):
+def read_int64_register_files(client, addr, counts):
     ra = client.read_holding_registers(address=addr, count=4*counts)
     
     if not ra.isError():
@@ -133,7 +179,7 @@ def read_registers_int64(client, addr, counts):
     return None
 
 #-----------------------------------------------------------------
-def read_register_uint64(client, addr):
+def read_uint64_register(client, addr):
     ra = client.read_holding_registers(address=addr, count=4)
     
     if not ra.isError():
@@ -145,8 +191,20 @@ def read_register_uint64(client, addr):
         return uint64val
     return None
 
+def read_uint64_register_files(client, addr, counts):
+    ra = client.read_holding_registers(address=addr, count=4*counts)
+    
+    if not ra.isError():
+        # Decode the registers as a 64-bit unsigned integer
+        uint64vals = client.convert_from_registers(
+            registers=ra.registers,
+            data_type =client.DATATYPE.UINT64
+        )
+        return uint64vals
+    return None
+
 #-----------------------------------------------------------------
-def read_register_float32(client, addr):
+def read_float32_register(client, addr):
     ra = client.read_holding_registers(address=addr, count=2)
     
     if not ra.isError():
@@ -158,7 +216,7 @@ def read_register_float32(client, addr):
         return float32val
     return None
 
-def read_registers_float32(client, addr, counts):
+def read_float32_register_files(client, addr, counts):
     ra = client.read_holding_registers(address=addr, count=2*counts)
     if not ra.isError():
         # Decode the registers as 32-bit float
@@ -171,7 +229,7 @@ def read_registers_float32(client, addr, counts):
     return None
 
 #-----------------------------------------------------------------
-def read_register_float64(client, addr):
+def read_float64_register(client, addr):
     ra = client.read_holding_registers(address=addr, count=4)
     
     if not ra.isError():
@@ -183,7 +241,7 @@ def read_register_float64(client, addr):
         return float64val
     return None
 
-def read_registers_float64(client, addr, counts):
+def read_float64_register_files(client, addr, counts):
     ra = client.read_holding_registers(address=addr, count=4*counts)
     
     if not ra.isError():

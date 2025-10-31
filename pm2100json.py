@@ -50,4 +50,4 @@ def pm2120_registermap(jsonfile):
 #----------------------------------------------------------------
 
 if DEBUG :
-    pm2120_registermap('pm2100map.json')
+    pm2120_registermap('pm2100mapabreidged.json')
